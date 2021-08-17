@@ -9,6 +9,15 @@ router.get('/', (req, res, next) => {
 
 router.post('/', (req, res, next) => {
 
+
+    console.log(req.body);
+
+    const sample = {
+        teste: req.body.name
+    }
+
+    console.log(sample);
+
     res.status(201).send({
         message: 'Using POST on example route'
     })
@@ -16,8 +25,9 @@ router.post('/', (req, res, next) => {
 });
 
 router.get('/:id', (req, res, next) => {
-    console.log(req);
+    //console.log(req);
     const id = req.params.id;
+
     res.status(200).send({
         message: 'Using GET on example route with Id',
         id: id,
